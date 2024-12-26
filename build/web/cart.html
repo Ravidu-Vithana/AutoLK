@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+    <!-- belle/cart-variant1.html   11 Nov 2019 12:44:31 GMT -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Cart - AutoLK</title>
+        <meta name="description" content="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.png" />
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="assets/css/plugins.css">
+        <!-- Bootstap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!-- Main Style CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/notification.css"/>
+    </head>
+    <body class="page-template belle cart-variant1" onload="loadCartItems()">
+        <div class="pageWrapper" id="pageWrapper">
+
+            <!-- Header Content -->
+
+            <!--Body Content-->
+            <div id="page-content">
+                <!--Page Title-->
+                <div class="page section-header text-center">
+                    <div class="page-title">
+                        <div class="wrapper"><h1 class="page-width">Shopping Cart</h1></div>
+                    </div>
+                </div>
+                <!--End Page Title-->
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-col">
+                            <form action="#" method="post" class="cart style2">
+                                <table>
+                                    <thead class="cart__row cart__header">
+                                        <tr>
+                                            <th colspan="2" class="text-center">Product</th>
+                                            <th class="text-center">Price</th>
+                                            <th class="text-center">Quantity</th>
+                                            <th class="text-right">Total</th>
+                                            <th class="action">&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cartItemView">
+                                        <tr class="cart__row border-bottom line1 cart-flex border-top" id="cartItem">
+                                            <td class="cart__image-wrapper cart-flex-item">
+                                                <a href="#"><img class="cart__image" id="cartItemImg" src="assets/images/autoparts/toolsAndGarage.jpg" alt="Elastic Waist Dress - Navy / Small"></a>
+                                            </td>
+                                            <td class="cart__meta small--text-left cart-flex-item">
+                                                <div class="list-view-item__title">
+                                                    <a href="#" id="cartItemTitle" >Cart is loading</a>
+                                                </div>
+
+                                                <div class="cart__meta-text">
+                                                    <span>Category: </span><span id="cartItemCategory">Loading</span><br>
+                                                    <span>Sub-category: </span><span id="cartItemSubCategory">Loading</span><br>
+                                                </div>
+                                            </td>
+                                            <td class="cart__price-wrapper cart-flex-item">
+                                                <span class="money" id="cartItemPrice">Loading</span>
+                                            </td>
+                                            <td class="cart__update-wrapper cart-flex-item text-right">
+                                                <div class="cart__qty text-center">
+                                                    <div class="qtyField">
+                                                        <a class="qtyBtn minus" href="javascript:void(0);"><i class="icon icon-minus"></i></a>
+                                                        <input class="cart__qty-input qty" type="text" name="updates[]" id="qty" data-pid="1" value="1" pattern="[0-9]*">
+                                                        <a class="qtyBtn plus" href="javascript:void(0);"><i class="icon icon-plus"></i></a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right small--hide cart-price">
+                                                <div><span class="money" id="cartItemTotalPrice">Loading</span></div>
+                                            </td>
+                                            <td class="text-center small--hide"><a href="#" class="btn btn--secondary cart__remove" id="cartItemRemoveButton" title="Remove item"><i class="icon icon anm anm-times-l"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3" class="text-left"><a href="index.html" class="btn btn-secondary btn--small cart-continue">Continue shopping</a></td>
+                                            <td colspan="3" class="text-right">
+                                                <button type="button" name="clear" onclick="clearAllCart()" class="btn btn-secondary btn--small  small--hide" id="cartItemClearButton">Clear Cart</button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table> 
+                            </form>                   
+                        </div>
+
+
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 offset-md-7 offset-lg-8 col-md-5 col-lg-4 cart__footer">
+                                    <div class="solid-border">	
+                                        <div class="row border-bottom pb-2">
+                                            <span class="col-12 col-sm-6 cart__subtotal-title">Subtotal</span>
+                                            <span class="col-12 col-sm-6 text-right"><span class="money" id="cartSubTotal">Loading</span></span>
+                                        </div>
+                                        <div class="row border-bottom pb-2 pt-2">
+                                            <span class="col-12 col-sm-6 cart__subtotal-title">Shipping</span>
+                                            <span class="col-12 col-sm-6 text-right" id="cartShippingFee">Loading</span>
+                                        </div>
+                                        <div class="row border-bottom pb-2 pt-2">
+                                            <span class="col-12 col-sm-6 cart__subtotal-title"><strong>Grand Total</strong></span>
+                                            <span class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span class="money" id="cartGrandTotal">Loading</span></span>
+                                        </div>
+                                        <button type="button" onclick="window.location = 'checkout.html'" id="cartCheckout" class="btn btn--small-wide checkout">Proceed To Checkout</button>
+                                        <div class="paymnet-img"><img src="assets/images/payment-img.jpg" alt="Payment"></div>
+                                        <p><a href="#;">Checkout with Multiple Addresses</a></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--End Body Content-->
+
+            <!-- Footer Content -->
+            <div id="footer-content-marker"></div>
+
+            <!--Scoll Top-->
+            <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+            <!--End Scoll Top-->
+
+            <!-- Notification -->
+            <script src="assets/js/notification.js"></script>
+
+            <!-- Including Jquery -->
+            <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+            <script src="assets/js/vendor/jquery.cookie.js"></script>
+            <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+            <script src="assets/js/vendor/wow.min.js"></script>
+            <!-- Including Javascript -->
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/plugins.js"></script>
+            <script src="assets/js/popper.min.js"></script>
+            <script src="assets/js/lazysizes.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/cart.js"></script>
+        </div>
+    </body>
+
+    <!-- belle/cart-variant1.html   11 Nov 2019 12:44:32 GMT -->
+</html>

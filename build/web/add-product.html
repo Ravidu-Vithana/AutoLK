@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Create an Account &ndash; Belle Multipurpose Bootstrap 4 Template</title>
+        <meta name="description" content="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.png" />
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="assets/css/plugins.css">
+        <!-- Bootstap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!-- Main Style CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/notification.css"/>
+        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+        <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    </head>
+    <body class="page-template belle" onload="loadCriteria()">
+        <div class="pageWrapper" id="pageWrapper">
+
+            <!-- Header Content -->
+
+            <!--Body Content-->
+            <div id="page-content">
+                <!--Page Title-->
+                <div class="page section-header text-center">
+                    <div class="page-title">
+                        <div class="wrapper"><h1 class="page-width">Add New Product</h1></div>
+                    </div>
+                </div>
+                <!--End Page Title-->
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+                            <div class="mb-4">
+                                <form method="post" action="#" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">	
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="categorySelect">Category</label>
+                                                <select id="categorySelect" onchange="updateSubCategory()">
+                                                    <option value="0">Select</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="subCategorySelect">Sub-category</label>
+                                                <select id="subCategorySelect">
+                                                    <option value="0">Select</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="title">Title</label>
+                                                <input type="text" value="" placeholder="" id="title" class="">                        	
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="description">Description</label>
+                                                <textarea id="description" rows="5" ></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="conditionSelect">Condition</label>
+                                                <select id="conditionSelect">
+                                                    <option value="0">Select</option>
+                                                </select>                    	
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="price">Price</label>
+                                                <input type="number" value="" placeholder="0.00" id="price" class="">                        	
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="quantity">Quantity</label>
+                                                <input type="number" value="" placeholder="0" id="quantity" class="">                        	
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="quantity">Images (Maximum 5 Images Allowed)</label>
+                                                <input type="file" id="imageUploader" multiple >                        	
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                                            <button type="button" onclick="addProduct()" class="btn mb-3">Add Product</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End Body Content-->
+
+            <!-- Footer Content -->
+            <div id="footer-content-marker"></div>
+
+            <!--Scoll Top-->
+            <span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+            <!--End Scoll Top-->
+
+            <!-- Notification -->
+            <script src="assets/js/notification.js"></script>
+
+            <!<!-- Filepond -->
+            <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+            <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+            <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+            <script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
+            <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+            <script>
+                                                        FilePond.registerPlugin(
+                                                                FilePondPluginImagePreview,
+                                                                FilePondPluginImageResize,
+                                                                FilePondPluginImageTransform
+                                                                );
+
+                                                        const inputElement = document.querySelector('input[type="file"]');
+                                                        const pond = FilePond.create(inputElement);
+            </script>
+
+            <!-- Including Jquery -->
+            <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+            <script src="assets/js/vendor/jquery.cookie.js"></script>
+            <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+            <script src="assets/js/vendor/wow.min.js"></script>
+            <!-- Including Javascript -->
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/plugins.js"></script>
+            <script src="assets/js/popper.min.js"></script>
+            <script src="assets/js/lazysizes.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/add-product.js"></script>
+        </div>
+    </body>
+
+    <!-- belle/register.html   11 Nov 2019 12:22:27 GMT -->
+</html>
